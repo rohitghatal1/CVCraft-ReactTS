@@ -19,7 +19,6 @@ export const showErrorMessage = (message: string) => {
     return;
   }
   Modal.confirm({
-    zIndex: (() => getNextZIndex() + 20000)(),
     maskClosable: true,
     closable: true,
     centered: true,
