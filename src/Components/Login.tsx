@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Form, Input, Spin } from "antd";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
 import notificationShow, { showErrorMessage } from "../utils/notificationShow";
 import BizforceLogo from "../../public/logo.png";
 
 const Login = () => {
-  const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
+
+  const [loading, setLoading] = useState(false);
+
   const [showBizforceLogoOnly, setShowBizforceLogoOnly] =
     useState<boolean>(true);
 
@@ -25,7 +27,7 @@ const Login = () => {
     if (!apikey) {
       const myAddr = window.location.hostname;
 
-      if (myAddr.includes("bizforce360")) {
+      if (myAddr.includes("cvcraft")) {
         localStorage.setItem("api", "https://api.bizforce360.com");
       } else {
         localStorage.setItem("api", `http://${myAddr}:8882`);
@@ -43,15 +45,12 @@ const Login = () => {
           <div className="flex flex-col items-center">
             <img
               src={BizforceLogo}
-              alt="Bizforce360 Logo"
+              alt="CV craft Logo"
               className="h-16 w-auto mb-2"
             />
             {!showBizforceLogoOnly && (
               <div className="text-center">
-                <h2 className="text-lg font-medium text-blue-800">
-                  Bizforce360 Hana
-                </h2>
-                <p className="text-xs text-gray-500 mt-1">version: 1.1.1</p>
+                <h2 className="text-lg font-medium text-blue-800">CV Craft</h2>
               </div>
             )}
           </div>
