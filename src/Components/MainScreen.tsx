@@ -1,13 +1,21 @@
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 const MainScreen = () => {
   return (
-    <div>
-      <h2>Main Screen</h2>
+    <div className="flex items-center">
       <div>
-        <Sidebar />
+        <div>
+          <Sidebar />
+        </div>
       </div>
-      <div>Main Content</div>
+      <div>
+        <div>
+          <Header />
+        </div>
+        <Outlet />
+      </div>
     </div>
   );
 };
