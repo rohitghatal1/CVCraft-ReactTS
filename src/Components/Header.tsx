@@ -1,7 +1,12 @@
+import { Avatar } from "antd";
+
 const Header = () => {
   return (
     <div>
-      <h2>Header</h2>
+      <div className="flex items-center justify-between py-3">
+        <h2 className="font-semibold text-lg">Header</h2>
+        <Avatar src="">R</Avatar>
+      </div>
     </div>
   );
 };
