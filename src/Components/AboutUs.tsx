@@ -1,14 +1,15 @@
 import React from "react";
 import "./about.css";
 import developerPhoto from "../assets/personPhotos/profilePic.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faInstagram,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
-export default function AboutUs() {
+const AboutUs: React.FC = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    // Add your form submit logic here
+    console.log("Message form submitted");
+  };
+
   return (
     <div>
       <div className="aboutUsConponent">
@@ -36,7 +37,7 @@ export default function AboutUs() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FontAwesomeIcon icon={faFacebookF} />
+                      <FaFacebookF />
                     </a>
                   </li>
 
@@ -47,9 +48,10 @@ export default function AboutUs() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FontAwesomeIcon icon={faInstagram} />
+                      <FaInstagram />
                     </a>
                   </li>
+
                   <li className="icon github">
                     <span className="tooltip">GitHub</span>
                     <a
@@ -57,7 +59,7 @@ export default function AboutUs() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FontAwesomeIcon icon={faGithub} />
+                      <FaGithub />
                     </a>
                   </li>
                 </ul>
@@ -68,30 +70,44 @@ export default function AboutUs() {
             </figure>
           </fieldset>
 
-          {/* send message section  */}
+          {/* Send message section */}
           <div className="sendMessageSection">
             <h2>Send Message</h2>
             <div className="messageFormContainer">
-              <form action="" className="sendMessageForm">
-                <input type="text" name="uName" placeholder="Your Name" />
-                <input type="email" name="uEmail" placeholder="Your Email" />
+              <form onSubmit={handleSubmit} className="sendMessageForm">
+                <input
+                  type="text"
+                  name="uName"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="uEmail"
+                  placeholder="Your Email"
+                  required
+                />
                 <input type="text" name="uSubject" placeholder="Subject" />
-                <input type="text" name="uMessage" placeholder="Message" />
+                <textarea
+                  name="uMessage"
+                  placeholder="Message"
+                  rows={4}
+                ></textarea>
 
                 <button className="sendMessageBtn" type="submit">
-                  <div class="svg-wrapper-1">
-                    <div class="svg-wrapper">
+                  <div className="svg-wrapper-1">
+                    <div className="svg-wrapper">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         width="24"
                         height="24"
                       >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="none" d="M0 0h24v24H0z" />
                         <path
                           fill="currentColor"
                           d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                        ></path>
+                        />
                       </svg>
                     </div>
                   </div>
@@ -104,4 +120,6 @@ export default function AboutUs() {
       </div>
     </div>
   );
-}
+};
+
+export default AboutUs;
