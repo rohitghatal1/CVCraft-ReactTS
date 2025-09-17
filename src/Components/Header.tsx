@@ -1,4 +1,4 @@
-import { Avatar, Dropdown, Input, MenuProps } from "antd";
+import { Avatar, Dropdown, Input } from "antd";
 import {
   UserOutlined,
   SettingOutlined,
@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 
 const Header = () => {
-  const menuItems: MenuProps["items"] = [
+  const menuItems: any["items"] = [
     {
       key: "1",
       label: "Profile",
@@ -31,10 +31,10 @@ const Header = () => {
 
   return (
     <div className="bg-white shadow-sm px-6 py-3 flex items-center justify-between rounded-b-lg">
-      {/* Left - Brand */}
-      <h2 className="text-xl font-bold text-indigo-600 tracking-wide">MyApp</h2>
+      <h2 className="text-xl font-bold text-indigo-600 tracking-wide">
+        CV Craft
+      </h2>
 
-      {/* Middle - Search */}
       <div className="hidden md:block w-1/3">
         <Input
           placeholder="Search..."
@@ -43,7 +43,6 @@ const Header = () => {
         />
       </div>
 
-      {/* Right - Avatar with dropdown */}
       <Dropdown menu={{ items: menuItems }} placement="bottomRight" arrow>
         <Avatar
           style={{ backgroundColor: "#4f46e5", cursor: "pointer" }}
