@@ -9,7 +9,6 @@ export default function HomeTab() {
 
   return (
     <div className="w-full">
-      {/* Banner Section */}
       <div className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
@@ -38,7 +37,6 @@ export default function HomeTab() {
         </div>
       </div>
 
-      {/* Steps Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
@@ -53,7 +51,6 @@ export default function HomeTab() {
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="text-indigo-600 text-4xl mb-4">
                 <i className="fa-regular fa-copy"></i>
@@ -66,7 +63,6 @@ export default function HomeTab() {
               </p>
             </div>
 
-            {/* Step 2 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="text-indigo-600 text-4xl mb-4">
                 <i className="fa-regular fa-file-lines"></i>
@@ -79,7 +75,6 @@ export default function HomeTab() {
               </p>
             </div>
 
-            {/* Step 3 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="text-indigo-600 text-4xl mb-4">
                 <i className="fa-solid fa-download"></i>
