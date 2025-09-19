@@ -1,4 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { Button } from "antd";
+import {
+  FaClock,
+  FaCheckCircle,
+  FaBriefcase,
+  FaCopy,
+  FaFileAlt,
+  FaDownload,
+} from "react-icons/fa";
 
 export default function HomeTab() {
   const navigate = useNavigate();
@@ -9,6 +18,7 @@ export default function HomeTab() {
 
   return (
     <div className="w-full">
+      {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-20 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
@@ -19,24 +29,27 @@ export default function HomeTab() {
           </h3>
           <p className="mt-5 text-sm md:text-base flex flex-wrap justify-center gap-4">
             <span className="flex items-center gap-2">
-              <i className="fas fa-clock"></i> Time saving
+              <FaClock /> Time saving
             </span>
             <span className="flex items-center gap-2">
-              <i className="fas fa-check-circle"></i> Easy to Use
+              <FaCheckCircle /> Easy to Use
             </span>
             <span className="flex items-center gap-2">
-              <i className="fas fa-briefcase"></i> Professional
+              <FaBriefcase /> Professional
             </span>
           </p>
-          <button
+          <Button
+            type="primary"
+            size="large"
             onClick={goToGenerator}
-            className="mt-8 px-8 py-3 bg-white text-indigo-600 font-semibold rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
+            className="mt-8 font-semibold rounded-xl shadow-md hover:!bg-indigo-700 transition-all duration-300"
           >
             Get Started!
-          </button>
+          </Button>
         </div>
       </div>
 
+      {/* Steps Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
@@ -51,9 +64,10 @@ export default function HomeTab() {
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-indigo-600 text-4xl mb-4">
-                <i className="fa-regular fa-copy"></i>
+              <div className="text-indigo-600 text-4xl mb-4 flex justify-center">
+                <FaCopy />
               </div>
               <h3 className="text-lg font-semibold text-gray-800">
                 Choose a template
@@ -63,9 +77,10 @@ export default function HomeTab() {
               </p>
             </div>
 
+            {/* Step 2 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-indigo-600 text-4xl mb-4">
-                <i className="fa-regular fa-file-lines"></i>
+              <div className="text-indigo-600 text-4xl mb-4 flex justify-center">
+                <FaFileAlt />
               </div>
               <h3 className="text-lg font-semibold text-gray-800">
                 Fill your Information
@@ -75,9 +90,10 @@ export default function HomeTab() {
               </p>
             </div>
 
+            {/* Step 3 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-indigo-600 text-4xl mb-4">
-                <i className="fa-solid fa-download"></i>
+              <div className="text-indigo-600 text-4xl mb-4 flex justify-center">
+                <FaDownload />
               </div>
               <h3 className="text-lg font-semibold text-gray-800">
                 Quick Download
